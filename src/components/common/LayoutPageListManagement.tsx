@@ -140,7 +140,7 @@ function LayoutPageListManagement({ title, ...props }: any) {
 				<div className="wrapContent bg-[#f6f7f9] p-[16px]" style={{ height: `calc(100% - ${heightTitle}px` }}>
 					<div className="content size-full rounded-[10px] bg-white">
 						<div className="wrapFilter border-b border-gray2 px-[24px] py-[16px]">
-							<div className="flex items-center justify-end">
+							<div className="flex items-center justify-end gap-[16px]">
 								{!!listMemberOrigin?.length && (
 									<>
 										<div className="search flex w-full items-center gap-[8px] rounded-[8px] border border-gray3 px-[12px] py-[8px]">
@@ -153,29 +153,25 @@ function LayoutPageListManagement({ title, ...props }: any) {
 												onChange={(e) => setFilterText(e.target.value)}
 											/>
 										</div>
-										<div className="mx-[16px] h-[24px] w-[1px] bg-gray3"></div>
+										<div className="h-[24px] w-[1px] bg-gray3"></div>
 									</>
 								)}
-								<div className="flex gap-[30px]">
-									{!!listMemberOrigin?.length && (
-										<>
-											<div className="btnOutline flexCenter gap-[8px]">
-												<p>Tải lên nhân viên</p>
-												<IconUpload className="text-[20px]" />
-											</div>
-											<div className="btnOutline flexCenter gap-[8px]">
-												<p>Xuất danh sách tài khoản</p>
-												<IconUpload className="text-[20px]" />
-											</div>
-										</>
-									)}
-									<div
-										className="btnMain flexCenter gap-[8px]"
-										onClick={() => setOpenDrawerMember(true)}
-									>
-										<p>Tạo mới</p>
-										<IconPlus className="text-[20px]" />
-									</div>
+
+								{!!listMemberOrigin?.length && (
+									<>
+										<div className="btnOutline flexCenter gap-[8px]">
+											<p>Tải lên nhân viên</p>
+											<IconUpload className="text-[20px]" />
+										</div>
+										<div className="btnOutline flexCenter gap-[8px]">
+											<p>Xuất danh sách tài khoản</p>
+											<IconUpload className="text-[20px]" />
+										</div>
+									</>
+								)}
+								<div className="btnMain flexCenter gap-[8px]" onClick={() => setOpenDrawerMember(true)}>
+									<p>Tạo mới</p>
+									<IconPlus className="text-[20px]" />
 								</div>
 							</div>
 							{!!listMemberOrigin?.length && (
