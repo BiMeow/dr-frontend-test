@@ -3,14 +3,14 @@ import LayoutPageListManagement from '@/components/common/LayoutPageListManageme
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
-function PageHome({ ...props }) {
+function PageProject({ ...props }) {
 	const router = useRouter();
 
 	return (
 		<>
-			<LayoutPageListManagement title="Quản lý danh sách ABE" />
+			<LayoutPageListManagement title="Quản lý danh sách Project" />
 		</>
 	);
 }
 
-export default memo(PageHome);
+export default memo(PageProject);
