@@ -23,7 +23,7 @@ export async function generateMetadata({ params, searchParams }: any, parent: an
 	console.log('BiMeow log fullUrl', fullUrl);
 
 	let title: any = 'DR Frontend Test';
-	let desc: any = 'Strategic Solutions for Professional Kitchens & Industrial Laundry';
+	let desc: any = 'DR Frontend Test';
 
 	return {
 		metadataBase: new URL(fullUrl),
