@@ -9,7 +9,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			fontFamily: {
-				Lato: `"Lato", sans-serif`,
+				Roboto: `"Roboto", sans-serif`,
 			},
 			screens: {
 				'dt-exl': { min: '1660px' },
@@ -35,7 +35,9 @@ const config: Config = {
 				gray6: '#667085',
 				gray7: '#565E73',
 				gray8: '#1D2939',
+				gray9: '#3D424F',
 				gray10: '#363A44',
+				red: '#ff0000',
 			},
 			animation: {
 				'spin-slow': 'spin 10s linear infinite',

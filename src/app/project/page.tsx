@@ -1,0 +1,18 @@
+import PageProject from '@/components/router/PageProject';
+import { unstable_noStore as noStore } from 'next/cache';
+
+export const metadata = async () => {
+	let title: any = 'DR Frontend Test | Home';
+	let desc: any = 'Strategic Solutions for Professional Kitchens & Industrial Laundry';
+
+	return {
+		title: title,
+		description: desc,
+	};
+};
+
+export default async function Home() {
+	noStore();
+
+	return <PageProject />;
+}

@@ -10,6 +10,14 @@ const StorageProvider = (props: any) => {
 	//api call
 	const [setting, setSetting] = useState();
 
+	//drawer
+	const [openDrawerMember, setOpenDrawerMember] = useState(false);
+	const [activeDataMember, setActiveDataMember] = useState();
+
+	//list member
+	const [listMemberOrigin, setListMemberOrigin] = useState<any>([]);
+	const [listMemberFilter, setListMemberFilter] = useState<any>([]);
+
 	return (
 		<StorageContext.Provider
 			value={{
@@ -18,6 +26,16 @@ const StorageProvider = (props: any) => {
 				//api call
 				setting,
 				setSetting,
+				//drawer
+				openDrawerMember,
+				setOpenDrawerMember,
+				activeDataMember,
+				setActiveDataMember,
+				//list member
+				listMemberOrigin,
+				setListMemberOrigin,
+				listMemberFilter,
+				setListMemberFilter,
 			}}
 			{...props}
 		></StorageContext.Provider>

@@ -24,7 +24,7 @@ const MainProvider: React.FC<any> = ({ children, isPrivate }) => {
 	const pathName = usePathname();
 	const { width } = useWindowSize();
 
-	const { setSetting, setIsLoading } = useStorage();
+	const { setSetting, setIsLoading, setListMemberOrigin } = useStorage();
 
 	const initAnimation = () => {
 		let listFadeInScroll = gsap.utils.toArray('.fadeInScroll');
@@ -231,6 +231,7 @@ const MainProvider: React.FC<any> = ({ children, isPrivate }) => {
 
 	useEffect(() => {
 		setIsLoading(true);
+		setListMemberOrigin([]);
 
 		setTimeout(() => {
 			if (isMounted() && pathName) {
