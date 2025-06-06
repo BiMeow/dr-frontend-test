@@ -127,6 +127,7 @@ function LayoutPageListManagement({ title, ...props }: any) {
 
 	const startIndex = (curPage - 1) * ITEMS_PER_PAGE;
 	const paginatedData = listMemberFilter.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+	// const paginatedData = listMemberFilter;
 
 	return (
 		<>
@@ -138,7 +139,7 @@ function LayoutPageListManagement({ title, ...props }: any) {
 				<h1 className="p-[16px] text-[24px] font-bold">{title}</h1>
 
 				<div className="wrapContent bg-[#f6f7f9] p-[16px]" style={{ height: `calc(100% - ${heightTitle}px` }}>
-					<div className="content size-full rounded-[10px] bg-white">
+					<div className="content flex size-full flex-col justify-stretch rounded-[10px] bg-white">
 						<div className="wrapFilter border-b border-gray2 px-[24px] py-[16px]">
 							<div className="flex items-center justify-end gap-[16px]">
 								{!!listMemberOrigin?.length && (
@@ -216,7 +217,7 @@ function LayoutPageListManagement({ title, ...props }: any) {
 
 						<div
 							className="listItem overflow-auto"
-							style={{ height: `calc(100% - ${heightFilter}px - ${heightPagin}px` }}
+							// style={{ height: `calc(100% - ${heightFilter}px - ${heightPagin}px` }}
 							data-lenis-prevent
 						>
 							<ListItemMember
@@ -226,12 +227,12 @@ function LayoutPageListManagement({ title, ...props }: any) {
 							/>
 						</div>
 
-						<div className="wrapPagin flex items-center justify-between border-t border-gray2 px-[24px] py-[18px]">
-							<p>
-								Hiển thị <span className="font-semibold text-primary6">10</span> nhân viên
-							</p>
+						{!!listMemberFilter.length && (
+							<div className="wrapPagin mt-auto flex items-center justify-between border-t border-gray2 px-[24px] py-[18px]">
+								<p>
+									Hiển thị <span className="font-semibold text-primary6">10</span> nhân viên
+								</p>
 
-							{!!listMemberFilter.length && (
 								<Pagination
 									className="cusPagin"
 									current={curPage}
@@ -242,8 +243,8 @@ function LayoutPageListManagement({ title, ...props }: any) {
 									showSizeChanger={false}
 									onChange={(e) => setCurPage(e)}
 								/>
-							)}
-						</div>
+							</div>
+						)}
 					</div>
 				</div>
 

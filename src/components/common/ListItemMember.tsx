@@ -7,39 +7,39 @@ function ListItemMember({ listMemberFilter, paginatedData, startIndex, ...props 
 	const { setActiveDataMember, setOpenDrawerMember } = useStorage();
 	return (
 		<>
-			<div className={`ListItemMember h-full`}>
+			<div className={`ListItemMember h-fit`}>
 				{listMemberFilter?.length ? (
-					<div className="tableItem">
-						<div className="tableHeading grid grid-cols-[4%_15%_14%_14%_8%_8%_16%_13%_8%] bg-[#f9fafb]">
-							<p className="itemTableHeading">STT</p>
-							<p className="itemTableHeading !text-left">Họ tên</p>
-							<p className="itemTableHeading">Mã nhân viên</p>
-							<p className="itemTableHeading">Số điện thoại</p>
-							<p className="itemTableHeading">Vùng</p>
-							<p className="itemTableHeading">Chức vụ</p>
-							<p className="itemTableHeading">Email</p>
-							<p className="itemTableHeading">Trạng thái hợp lệ</p>
-							<p className="itemTableHeading">Hành động</p>
-						</div>
+					<table className="tableItem w-full">
+						<tr className="tableHeading bg-[#f9fafb]">
+							<th className="itemTableHeading w-[4%]">STT</th>
+							<th className="itemTableHeading w-[15%] !text-left">Họ tên</th>
+							<th className="itemTableHeading w-[14%]">Mã nhân viên</th>
+							<th className="itemTableHeading w-[14%]">Số điện thoại</th>
+							<th className="itemTableHeading w-[8%]">Vùng</th>
+							<th className="itemTableHeading w-[8%]">Chức vụ</th>
+							<th className="itemTableHeading w-[16%]">Email</th>
+							<th className="itemTableHeading w-[13%]">Trạng thái hợp lệ</th>
+							<th className="itemTableHeading w-[8%]">Hành động</th>
+						</tr>
 						{paginatedData?.map((item: any, index: number) => (
-							<div
+							<tr
 								className={`
-											tableContent grid grid-cols-[4%_15%_14%_14%_8%_8%_16%_13%_8%] 
-											${index % 2 == 0 ? 'bg-white' : 'bg-[#f9fafb]'}
-											`}
+								tableContent
+								${index % 2 == 0 ? 'bg-white' : 'bg-[#f9fafb]'}
+								`}
 								key={index}
 							>
-								<p className="itemTableContent">{startIndex + index + 1}</p>
-								<p className="itemTableContent !text-left">{item.name}</p>
-								<p className="itemTableContent">{item.memId}</p>
-								<p className="itemTableContent">{item.phone}</p>
-								<p className="itemTableContent">{item.zone}</p>
-								<p className="itemTableContent">{item.position}</p>
-								<p className="itemTableContent">{item.email}</p>
-								<p className="itemTableContent">
+								<td className="itemTableContent">{startIndex + index + 1}</td>
+								<td className="itemTableContent !text-left">{item.name}</td>
+								<td className="itemTableContent">{item.memId}</td>
+								<td className="itemTableContent">{item.phone}</td>
+								<td className="itemTableContent">{item.zone}</td>
+								<td className="itemTableContent">{item.position}</td>
+								<td className="itemTableContent">{item.email}</td>
+								<td className="itemTableContent">
 									<TagStatus status={item.status} />
-								</p>
-								<div className="itemTableContent">
+								</td>
+								<td className="itemTableContent">
 									<div
 										className="cursor-pointer text-[24px] !text-primary6 duration-300 hover:!text-primary2"
 										onClick={() => {
@@ -49,10 +49,10 @@ function ListItemMember({ listMemberFilter, paginatedData, startIndex, ...props 
 									>
 										<IconView />
 									</div>
-								</div>
-							</div>
+								</td>
+							</tr>
 						))}
-					</div>
+					</table>
 				) : (
 					<div className="nodata absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
 						<img
