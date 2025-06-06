@@ -175,6 +175,7 @@ function LayoutPageListManagement({ title, ...props }: any) {
 									<IconPlus className="text-[20px]" />
 								</div>
 							</div>
+
 							{!!listMemberOrigin?.length && (
 								<div className="mt-[12px] flex items-center gap-[12px]">
 									<p className="font-semibold">Bộ lọc:</p>
